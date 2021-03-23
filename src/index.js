@@ -8,44 +8,27 @@ ReactDOM.render(
 
 
 var numbers = [3, 56, 2, 48, 1];
-var newNumbers = [];
 
-function double(x) {
-    newNumbers.push(x * 2);
+
+function myFilter(x) {
+    if (x > 5) {
+        return true
+    } else {
+        return false
+    }
 }
 
-function doubleReturn(x) {
-    return x * 2;
-}
+var filtered = numbers.filter(myFilter);
 
-// Normal forEach
-// numbers.forEach(function (element) {
-//     console.log(element);
-// });
-
-////// Using forEach
-
-// Option 1
-numbers.forEach(function (x) {
-    double(x)
+var filtered2 = numbers.filter(function (x) {
+    return x > 2;
 });
 
-// Option 2
-// numbers.forEach(double);
+var filtered3 = numbers.filter(x => { return x < 50 });
 
-
-////// Using Map
-
-// Option 3
-var myNumbers = numbers.map(function (x) {
-    return x * 2;
-})
-// Option 4
-var myNumbers2 = numbers.map(doubleReturn)
-
-console.log(myNumbers);
-console.log(myNumbers2);
-
+console.log(filtered);
+console.log(filtered2);
+console.log(filtered3);
 
 
 
