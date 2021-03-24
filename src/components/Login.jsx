@@ -9,7 +9,9 @@ function Login(props) {
       <Input inputType="text" placeholder="Username" />
       <Input inputType="password" placeholder="Password" />
       {!props.userIsRegistered && <Input inputType="password" placeholder="Confirm Password" />}
-      {props.userIsRegistered ? <button type="submit">Login</button> : <button type="submit">Register</button>}
+      <button type="submit">
+        {props.userIsRegistered ? "Login" : "Register"}
+      </button>
     </form>);
 }
 
