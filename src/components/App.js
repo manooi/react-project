@@ -1,25 +1,32 @@
-import React from 'react';
-import Card from './Card';
-import contacts from '../contacts'
+import React from "react";
+import Login from './Login';
+import Mycheckbox from './Mycheckbox';
 
+var isLoggedIn = false;
+var currentTime = new Date(2021, 12, 12, 8).getHours();
 
-function createCard(contact) {
-  return <Card
-    key={contact.id}
-    id={contact.id}
-    name={contact.name}
-    imgUrl={contact.imgURL}
-    email={contact.email}
-    phone={contact.phone}
-  />;
+function renderConditionally() {
+  if (isLoggedIn) {
+    return <h1>Hello</h1>;
+  } else {
+    return (
+      <Login />
+    );
+  }
 }
-
 
 function App() {
   return (
-    <div>
-      <h1 className="heading">My Contacts</h1>
-      {contacts.map(createCard)}
+    <div className="container">
+      {/* Option1: Using function */}
+      {/* {renderConditionally()} */}
+
+      {/* Option 2: Ternary operator */}
+      {/* {isLoggedIn ? <h1>Hello</h1> : <Login />} */}
+      {currentTime > 6 ? <h1>Hello</h1> : null}
+
+      {/* Option 3: && || */}
+      {currentTime > 6 && <h1>Tis is just works!</h1>}
     </div>
   );
 }
