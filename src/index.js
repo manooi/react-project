@@ -1,15 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App';
+import App from "./components/App"
 
-ReactDOM.render(
-    <App />, document.getElementById('root')
-);
 
-var numbers = [3, 56, 2, 48, 1];
 
-var sum = numbers.reduce(function (acc, num) {
-    return acc + num;
-})
+// One approach (rerendering all the time!)
 
-console.log(sum);
+// var count = 0;
+// function increase() {
+//   ReactDOM.render(
+//     <div className="container">
+//       <h1>{count}</h1>
+//       <button onClick={increase}>+</button>
+//     </div>,
+//     document.getElementById("root")
+//   );
+//   count++;
+// }
+// increase()
+
+ReactDOM.render(<App />, document.getElementById("root"));
+
