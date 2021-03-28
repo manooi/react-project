@@ -1,23 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from "./components/App"
-
-
-
-// One approach (rerendering all the time!)
-
-// var count = 0;
-// function increase() {
-//   ReactDOM.render(
-//     <div className="container">
-//       <h1>{count}</h1>
-//       <button onClick={increase}>+</button>
-//     </div>,
-//     document.getElementById("root")
-//   );
-//   count++;
-// }
-// increase()
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./components/App";
 
 ReactDOM.render(<App />, document.getElementById("root"));
 
+//Challenge:
+//1. Given that you can get the current time using:
+// let time = new Date().toLocaleTimeString();
+// console.log(time);
+//Show the latest time in the <h1> when the Get Time button
+//is pressed.
+
+//2. Given that you can get code to be called every second
+//using the setInterval method.
+//Can you get the time in your <h1> to update every second?
+
+//e.g. uncomment the code below to see Hey printed every second.
+// function sayHi() {
+//   console.log("Hey");
+// }
+// setInterval(sayHi, 1000);

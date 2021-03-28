@@ -1,33 +1,27 @@
-import React, { useState } from 'react';
+import React from "react";
+
 
 function App() {
 
-  // Basic state
-  // const state = useState(5); //Initial State value
-  // console.log(state[0]);
+  let time = new Date().toLocaleTimeString();
+  let [currentTime, setTime] = React.useState(time);
 
-  //ES6 Destrucring!
-  // const [red, green, blue] = [9, 132, 227]
-  // console.log(blue);
-
-  const [count, setCount] = useState(0);
-  console.log(setCount);
-
-  function increase() {
-    setCount(count + 1);
+  function updateTime() {
+    time = new Date().toLocaleTimeString();
+    currentTime = setTime(time);
   }
 
-  function decrease() {
-    setCount(count - 1);
-  }
+  setInterval(updateTime, 1000);
 
   return (
     <div className="container">
-      <h1>{count}</h1>
-      <button onClick={increase}>+</button>
-      <button onClick={decrease}>-</button>
+      <h1>{currentTime}</h1>
+      <button onClick={updateTime}>Get Time</button>
     </div>
   );
+
 }
+
+
 
 export default App;
