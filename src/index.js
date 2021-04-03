@@ -1,22 +1,37 @@
+// CHALLENGE: uncomment the code below and see the car stats rendered
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./components/App";
+import cars from "./practice.js";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+const [honda, tesla] = cars;
 
-//Challenge:
-//1. Given that you can get the current time using:
-// let time = new Date().toLocaleTimeString();
-// console.log(time);
-//Show the latest time in the <h1> when the Get Time button
-//is pressed.
+// Extensive destructuring
+const { coloursByPopularity: hondaTopColour, speedStats: { topSpeed: hondaTopSpeed } } = honda;
 
-//2. Given that you can get code to be called every second
-//using the setInterval method.
-//Can you get the time in your <h1> to update every second?
+// ใส่ [] แล้วจะถอดอันแรกให้เลย
+const { coloursByPopularity: [teslaTopColour], speedStats: { topSpeed: teslaTopSpeed } } = tesla;
 
-//e.g. uncomment the code below to see Hey printed every second.
-// function sayHi() {
-//   console.log("Hey");
-// }
-// setInterval(sayHi, 1000);
+
+// Set Default Value (if undefined)
+const { coloursByPopularity = "Default colour" } = tesla;
+
+ReactDOM.render(
+  <table>
+    <tr>
+      <th>Brand</th>
+      <th>Top Color</th>
+      <th>Top Speed</th>
+    </tr>
+    <tr>
+      <td>{tesla.model}</td>
+      <td>{teslaTopColour}</td>
+      <td>{teslaTopSpeed}</td>
+    </tr>
+    <tr>
+      <td>{honda.model}</td>
+      <td>{hondaTopColour}</td>
+      <td>{hondaTopSpeed}</td>
+    </tr>
+  </table>,
+  document.getElementById("root")
+);
