@@ -3,34 +3,18 @@ import reactDom from "react-dom";
 
 function App() {
 
-  const [headingText, setHeadingText] = useState("Hello");
-  const [isMouseOver, setMouseOver] = useState(false);
+  const [name, setname] = useState("")
 
-  function handleClick() {
-    setHeadingText("Submitted");
-  }
-
-  function handleMouseOver() {
-    setMouseOver(true);
-  }
-
-  function handleMouseOut() {
-    setMouseOver(false);
+  function handleChange(event) {
+    console.log(event.target.value);
+    setname(event.target.value);
   }
 
   return (
     <div className="container">
-      <h1>{headingText}</h1>
-      <input type="text" placeholder="What's your name?" />
-      <button
-        onMouseOver={handleMouseOver}
-        onMouseOut={handleMouseOut}
-        style={
-          isMouseOver ? { backgroundColor: "black" } : { backgroundColor: "white" }
-        }
-        onClick={handleClick}>
-        Submit
-      </button>
+      <h1>Hello {name}</h1>
+      <input onChange={handleChange} type="text" placeholder="What's your name?" value={name} />
+      <button> Submit </button>
     </div>
   );
 }
