@@ -1,20 +1,25 @@
 import React, { useState } from "react";
-import reactDom from "react-dom";
 
 function App() {
 
-  const [name, setname] = useState("")
+  const [name, setName] = useState("")
+  const [headingText, setHeadingText] = useState("")
 
   function handleChange(event) {
-    console.log(event.target.value);
-    setname(event.target.value);
+    setName(event.target.value);
+    // console.log(event.target.value);
+    // setName(event.target.placeholder);
+  }
+
+  function handleClick() {
+    setHeadingText(name)
   }
 
   return (
     <div className="container">
-      <h1>Hello {name}</h1>
+      <h1>Hello {headingText}</h1>
       <input onChange={handleChange} type="text" placeholder="What's your name?" value={name} />
-      <button> Submit </button>
+      <button onClick={handleClick}> Submit </button>
     </div>
   );
 }
