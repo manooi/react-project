@@ -11,15 +11,20 @@ function App() {
     // setName(event.target.placeholder);
   }
 
-  function handleClick() {
+  function handleClick(event) {
     setHeadingText(name)
+
+    // ห้ามไม่ให้ Refresh!
+    event.preventDefault();
   }
 
   return (
     <div className="container">
       <h1>Hello {headingText}</h1>
-      <input onChange={handleChange} type="text" placeholder="What's your name?" value={name} />
-      <button onClick={handleClick}> Submit </button>
+      <form onSubmit={handleClick}>
+        <input onChange={handleChange} type="text" placeholder="What's your name?" value={name} />
+        <button type="submit">Submit </button>
+      </form>
     </div>
   );
 }
