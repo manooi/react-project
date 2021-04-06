@@ -13,14 +13,9 @@ function App() {
     // const inputName = event.target.name
 
     setContact((prev) => {
-      // ห้ามใช้ event.target.name หรืออื่น ๆ ใน setter นี้
-      // จะเกิด synthetic event error
-      if (name === "fName") {
-        return { fName: value, lName: prev.lName, email: prev.email };
-      } else if (name === "lName") {
-        return { lName: value, fName: prev.fName, email: prev.email };
-      } else {
-        return { email: value, fName: prev.fName, lName: prev.lName };
+      return {
+        ...prev,
+        [name]: value
       }
     });
   }
