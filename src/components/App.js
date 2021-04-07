@@ -4,9 +4,14 @@ import InputArea from "./InputArea"
 
 function App() {
 
-  const [inputText, setInputText] = useState("");
   const [item, setItem] = useState([]);
 
+
+  function addItem(inputText) {
+    setItem(previous => {
+      return [...previous, inputText]
+    });
+  }
 
   function deleteItem(id) {
     setItem(previous => {
@@ -21,7 +26,7 @@ function App() {
       <div className="heading">
         <h1>To-Do List</h1>
       </div>
-      <InputArea setInputText={setInputText} setItem={setItem} inputText={inputText} />
+      <InputArea addItem={addItem} />
       <div>
         <ul>
           {item.map((toDoItem, index) => <ToDoList id={index} key={index} text={toDoItem} onChecked={deleteItem} />)}
