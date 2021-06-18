@@ -10,19 +10,19 @@ then
 (No database needed)
 <br>
 
-## List of projects
-`git branch -a`
+## List of projects 😊
+#### `git branch -a`
 ![Image](attachments/git_branch.png)
 
-#### 1. emojipedia (practice how to use map function)
-`git checkout origin/map-practice`
+### 1. Emojipedia (practice how to use map function)
+#### `git checkout origin/map-practice`
 ![Image](attachments/map-practice.png)
 
-#### 2. To-do list
-`git checkout origin/todo-list`
+### 2. To-do list
+#### `git checkout origin/todo-list`
 ![Image](attachments/todo.png)
 
-#### 3. Keeper app
-`git checkout origin/keeper-app`
+### 3. Keeper app
+#### `git checkout origin/keeper-app`
 (Must have material-ui installed with `npm install @material-ui/core`)
 ![Image](attachments/keeper_app.png)
